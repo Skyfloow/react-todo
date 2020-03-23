@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import AppHeader from '../components/app-header';
 import SearchPanel from'../components/search-panel';
 import TodoList from '../components/todo-list';
@@ -58,7 +60,7 @@ export default class App extends Component {
         };
       });
     } else {
-      
+      toast.warn("Need to enter to-do");
       return
     }
   };
@@ -144,6 +146,7 @@ export default class App extends Component {
                   onToggleImportant={this.onToggleImportant}
                   />
         <ItemAddForm onItemAdded={this.addItem}/>
+        <ToastContainer />
       </div>
     );
   };
