@@ -45,17 +45,22 @@ export default class App extends Component {
 
   addItem = (text) => {
     const newItem = this.createTodoItem(text);
+    
+    if(text.length) {
+      this.setState(({ todoData }) => {
+        const newArr = [
+          ...todoData,
+          newItem
+        ];
 
-    this.setState(({ todoData }) => {
-      const newArr = [
-        ...todoData,
-        newItem
-      ];
-
-      return {
-        todoData: newArr
-      };
-    });
+        return {
+          todoData: newArr
+        };
+      });
+    } else {
+      
+      return
+    }
   };
 
   toggleProperty = (arr, id, propName) => {

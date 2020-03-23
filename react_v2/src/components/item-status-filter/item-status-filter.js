@@ -13,7 +13,7 @@ export default class ItemStatusFilter extends Component {
     const { filter, onFilterChange } = this.props,
           buttons = this.buttons.map(({name, label}) => {
             const isActive = filter === name,
-            clazz = isActive ? 'btn-info' : 'btn-outline-secondary'
+            clazz = isActive ? 'btn-info' : 'btn-outline-primary'
             return(
               <button type="button"
                       key={name}
